@@ -1,0 +1,12 @@
+---
+# vars file for GCP_VM_Creation
+
+service_account_email: "gcp-demo@seismic-octane-267320.iam.gserviceaccount.com"
+credentials_file: "/home/gjsprivate/seismic-octane-267320-724a535165d5.json"
+project_id: "seismic-octane-267320"
+instance_name: centos-7
+machine_type: e2-micro
+zone: us-central1-a
+source_image: projects/centos-cloud/global/images/family/centos-7
+auth_kind: machineaccount
+

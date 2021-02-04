@@ -1,0 +1,22 @@
+---
+# Example GCP playbook
+- name: Compute Engine Create Instance Example
+  hosts: localhost
+  connection: local
+  vars:
+    service_account_email: "ansibledemo@seismic-octane-267320.iam.gserviceaccount.com"
+    credentials_file: "/home/gjsprivate/seismic-octane-267320-94a5b7eaa0ec.json"
+    project_id: "seismic-octane-267320"
+
+  tasks:
+  - name: create gcp instance
+    gce:
+      instance_names: apacheinstance
+      zone: us-east1-b 
+      machine_type: n1-standard-1
+      image: centos-7-v20190116
+      external_ip: ephemeral
+      state: present
+      service_account_email: "{{ service_account_email }}"
+      credentials_file: "{{ credentials_file }}"
+      project_id: "{{ project_id }}"
